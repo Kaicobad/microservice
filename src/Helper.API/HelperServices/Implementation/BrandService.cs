@@ -1,13 +1,16 @@
 ﻿using Helper.API.HelperServices.Interfaces;
 using Helper.API.Models;
+using Helper.API.Reporsitory;
 
 namespace Helper.API.HelperServices.Implementation
 {
     public class BrandService : IBrandService
     {
-        public BrandService()
+        private readonly IRepositoryService<BrandModel> _brandRepo;
+
+        public BrandService(IRepositoryService<BrandModel> brandRepo)
         {
-            
+            _brandRepo = brandRepo;
         }
         public string AddBrand(BrandModel brand)
         {

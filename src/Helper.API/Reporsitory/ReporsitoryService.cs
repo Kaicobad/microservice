@@ -1,16 +1,28 @@
-﻿using System.Linq.Expressions;
+﻿using Helper.API.DataContext;
+using System.Linq.Expressions;
 
 namespace Helper.API.Reporsitory
 {
     public class ReporsitoryService<T> : IRepositoryService<T> where T : class
     {
-        public ReporsitoryService()
+        private readonly HelperDbContext _dbContext;
+
+        public ReporsitoryService(HelperDbContext dbContext)
         {
-            
+            _dbContext = dbContext;
         }
         public void Add(in T sender)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _dbContext.Add(sender);
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
         public IEnumerable<T> GetAll()

@@ -18,7 +18,7 @@ namespace Product.API.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "productGetWeatherForecast")]
+        [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

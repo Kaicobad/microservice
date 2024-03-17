@@ -1,36 +1,29 @@
 {
-  "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5004"
-  },
+  //"GlobalConfiguration": {
+  //  "BaseUrl": "http://localhost:5004"
+  //},
+  // "http": null,
+  //localhost:5001/WeatherForecast/api/weatherGet
+  //localhost:5002/WeatherForecast/api/GetWeatherForecast
+
+
   "Routes": [
     {
-      "UpstreamPathTemplate": "/gateway/helper",
+      "UpstreamPathTemplate": "/ApiGateWay/ProductForCast",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/student",
+      "DownstreamPathTemplate": "/WeatherForecast",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5003
+          "Port": 5001
         }
       ]
-    //},
-    //{
-    //  "UpstreamPathTemplate": "/gateway/students/{Id}",
-    //  "UpstreamHttpMethod": [ "Get" ],
-    //  "DownstreamPathTemplate": "/api/student/{Id}",
-    //  "DownstreamScheme": "http",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "localhost",
-    //      "Port": 5003
-    //    }
-    //  ]
-    //},
+    },
     {
-      "UpstreamPathTemplate": "/gateway/product",
+      "UpstreamPathTemplate": "/ApiGateWay/OrderForCast",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/teacher",
+      "DownstreamPathTemplate": "/WeatherForecast",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -40,16 +33,29 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/teacher/{Id}",
+      "UpstreamPathTemplate": "/ApiGateWay/HelperForCast",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/teachers/{Id}",
+      "DownstreamPathTemplate": "/WeatherForecast",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5002
+          "Port": 5003
         }
       ]
     }
+    //,
+    //{
+    //  "UpstreamPathTemplate": "/gateway/teacher/{Id}",
+    //  "UpstreamHttpMethod": [ "Get" ],
+    //  "DownstreamPathTemplate": "/api/teachers/{Id}",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 5002
+    //    }
+    //  ]
+    //}
   ]
-} 
+}

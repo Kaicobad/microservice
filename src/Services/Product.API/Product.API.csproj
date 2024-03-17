@@ -30,6 +30,8 @@
   <ItemGroup>
     <Folder Include="AppServices\Interfaces\" />
     <Folder Include="AppServices\Implimentations\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="DataContext\" />
   </ItemGroup>
 
 </Project>
